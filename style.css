@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.sidebar li {
+  margin: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  color: #007bff;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  width: calc(100% - 220px);
+  left: 220px;
+  top: 0;
+}
+
+.top-bar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top-bar .menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.top-bar .menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.top-bar .search-bar input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.content {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-left: 220px;
+  margin-top: 50px;
+}
+
+/* Settings Sidebar Styles */
+.settings-sidebar {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1002;
+}
+
+.settings-sidebar.active {
+  right: 0;
+}
+
+.settings-header {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.settings-options {
+  padding: 20px 0;
+}
+
+.settings-option {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.settings-option:hover {
+  background-color: #f5f5f5;
+}
+
+.settings-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1001;
+}

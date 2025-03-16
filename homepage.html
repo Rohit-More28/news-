@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsYork Homepage</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="#" onclick="fetchNews('politics')">Politics</a>
+            <a href="#" onclick="fetchNews('business')">Business</a>
+            <a href="#" onclick="fetchNews('sports')">Sports</a>
+            <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
+            <a href="#" onclick="fetchNews('health')">Health</a>
+            <a href="#" onclick="fetchNews('technology')">Technology</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search" onkeypress="searchNews(event)">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <img src="images/bell-regular-24.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <button id="settings-button" style="background: none; border: none; cursor: pointer;">
+                    <img src="images/cog-solid-24.png" alt="Settings" width="25">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="peoplevoice.html">People's Voice</a></li>
+            <li><a href="submissions.html">Submissions</a></li>
+            <li><a href="bookmarks.html">Bookmarks</a></li>
+            <li><a href="editorialguidelines.html">Editorial Guidelines</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="privacysecurity.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section id="news-container">
+            <!-- News articles will be dynamically inserted here -->
+            <p>Loading news...</p>
+        </section>
+    </main>
+
+    <!-- Settings Sidebar -->
+    <div class="settings-sidebar" id="settings-sidebar">
+        <div class="settings-header">
+            <button class="back-arrow">←</button>
+            <span>Settings</span>
+        </div>
+        <div class="settings-options">
+            <a href="profile.html" class="settings-option">User Profile Settings</a>
+            <a href="settings.html" class="settings-option">General Settings</a>
+            <a href="#" class="settings-option" id="logout-button">Log Out</a>
+        </div>
+    </div>
+    <div class="settings-overlay" id="settings-overlay"></div>
+
+    <!-- Include JavaScript files -->
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Load default news on page load
+        window.onload = function() {
+            fetchNews(); // Default to fetching 'India' news
+        };
+    </script>
+</body>
+</html>
